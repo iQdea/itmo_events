@@ -1,0 +1,5 @@
+bombardier:
+  auth-enabled: true
+  teams:
+    - name: "p03"
+      url: "http://127.0.0.1:30012"

@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: shop-service
+  data:
+    mongodb:
+      authentication-database: admin
+      username: user
+      password: pass
+      database: shop
+      port: 27017
+      host: localhost
+
+
+server:
+  error:
+    include-exception: false
+    include-message: always
+    include-stacktrace: always
+  port: 30012
+security:
+  secret: secret12345678
+  token-lifetime: 15m
+  refresh-token-lifetime: 30d
+
+management:
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include : "info,health,prometheus,metrics"
+event:
+  sourcing:
+    snapshot-frequency: 100
+    auto-scan-enabled: true
+    scan-package: ru.quipy
